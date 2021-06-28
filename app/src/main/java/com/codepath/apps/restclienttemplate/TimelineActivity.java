@@ -6,8 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
@@ -55,6 +58,23 @@ public class TimelineActivity extends AppCompatActivity {
         }));
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the actio bar if it is present
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.compose){
+            //compose icon has been selected
+            Toast.makeText(this, "Compose!", Toast.LENGTH_SHORT).show();
+        }
+        return true;
+    }
+
     private void populateHomeTimeline(){
         client.getHomeTimeline(new JsonHttpResponseHandler() {
             @Override
