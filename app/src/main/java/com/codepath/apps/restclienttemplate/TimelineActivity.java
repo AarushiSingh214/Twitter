@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -62,6 +63,15 @@ public class TimelineActivity extends AppCompatActivity {
             public void onClick(View view) {
                 client.clearAccessToken();
                 finish();
+            }
+        }));
+
+        FloatingActionButton composeBtn = (FloatingActionButton) findViewById(R.id.composeBtn);
+        composeBtn.setOnClickListener((new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(TimelineActivity.this, ComposeActivity.class);
+                startActivityForResult(intent, REQUEST_CODE);
             }
         }));
 

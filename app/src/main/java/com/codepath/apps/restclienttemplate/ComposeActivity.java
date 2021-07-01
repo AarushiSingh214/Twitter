@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,6 +30,17 @@ public class ComposeActivity extends AppCompatActivity {
     Button btnTweet;
 
     TwitterClient client;
+    MenuItem miActionProgressItem;
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        // Store instance of the menu item containing progress
+        miActionProgressItem = menu.findItem(R.id.miActionProgress);
+
+        // Return to finish
+        return super.onPrepareOptionsMenu(menu);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +92,8 @@ public class ComposeActivity extends AppCompatActivity {
             }
 
         });
+
+
 
 
     }
