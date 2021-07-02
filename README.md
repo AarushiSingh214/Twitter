@@ -49,7 +49,7 @@ Here's a walkthrough of implemented user stories:
 <img src='scroll_transition.gif' width='' alt='Video Walkthrough' />
 <img src='tweeting.gif' width='' alt='Video Walkthrough' />
 <img src='Link.gif' width='' alt='Video Walkthrough' />
-<img src='refresh.gif' width='' alt='Video Walkthrough' />
+<img src='refresh2.gif' width='' alt='Video Walkthrough' />
 
 GIF created with [Kap](https://getkap.co/).
 
